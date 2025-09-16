@@ -10,3 +10,9 @@
 .idea/
 *.xml
 
+# Gradle
+.gradle/
+build/
+*.jar
+*.war
+*.ear
