@@ -6,7 +6,38 @@
 
   ready(() => {
     const $ = (s, r = document) => r.querySelector(s);
+    function ensureToastContainer() {
+      let c = document.getElementById("th-toast-container");
+      if (!c) {
+        c = document.createElement("div");
+        c.id = "th-toast-container";
+        c.className = "toast-container position-fixed bottom-0 end-0 p-3";
+        document.body.appendChild(c);
+      }
+      return c;
+    }
 
+    function showToast(message) {
+      try {
+        const container = ensureToastContainer();
+        const t = document.createElement("div");
+        t.className = "toast align-items-center text-bg-success border-0";
+        t.role = "alert";
+        t.ariaLive = "assertive";
+        t.ariaAtomic = "true";
+        t.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>`;
+        container.appendChild(t);
+        const toast = new bootstrap.Toast(t, { delay: 1800 });
+        toast.show();
+        t.addEventListener("hidden.bs.toast", () => t.remove());
+      } catch {
+        alert(message);
+      }
+    }
     function ensureModal() {
       const mustHave = [
         "#productoModalLabel",
@@ -177,7 +208,7 @@
                 1
               );
               // TODO: reemplazar alert por toast si quieres
-              alert(`Añadido al carrito: ${prod.nombre}`);
+              showToast("Producto agregado correctamente");
             }
           };
         }
