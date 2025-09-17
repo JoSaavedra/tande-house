@@ -207,7 +207,7 @@
                 },
                 1
               );
-              // TODO: reemplazar alert por toast si quieres
+              
               showToast("Producto agregado correctamente");
             }
           };

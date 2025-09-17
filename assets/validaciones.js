@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Aplica validación nativa de HTML5 + estilos de Bootstrap
+  
   document.querySelectorAll("form.needs-validation").forEach((form) => {
     form.addEventListener("submit", (e) => {
       if (!form.checkValidity()) {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Ejemplo de validación simple para inputs con data-req (opcional)
+  
   document.addEventListener("input", (e) => {
     const el = e.target;
     if (el.matches("[data-req]")) {

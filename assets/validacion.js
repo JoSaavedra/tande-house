@@ -316,7 +316,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     localStorage.setItem("currentUser", JSON.stringify(user));
     showAlert("loginAlert", `¡Bienvenido ${user.fullName}!`, "success");
 
-    // Aquí puedes redirigir a otra página o mostrar el dashboard
+    
     setTimeout(() => {
       alert(
         `Login exitoso! Bienvenido ${user.fullName}\nRegión: ${user.region}\nComuna: ${user.comuna}`

@@ -255,7 +255,7 @@ main.container {
   }
 }
 
-/* Tabs */
+
 .auth-tabs {
   gap: 0.5rem;
 }
@@ -267,7 +267,7 @@ main.container {
   color: #fff;
 }
 
-/* Formularios */
+
 .form-floating > label {
   color: #6c757d;
 }
@@ -282,7 +282,7 @@ main.container {
   color: #6c757d;
 }
 
-/* Ajustes visuales */
+
 input.form-control,
 select.form-select,
 textarea.form-control {

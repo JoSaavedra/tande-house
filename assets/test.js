@@ -9,7 +9,7 @@
             if (nombre && correo && contenido) {
                 alert('Mensaje enviado correctamente!\n\nNombre: ' + nombre + '\nCorreo: ' + correo + '\nContenido: ' + contenido);
                 
-                // Limpiar el formulario
+                
                 this.reset();
             } else {
                 alert('Por favor, completa todos los campos.');
