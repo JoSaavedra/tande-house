@@ -1,109 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>TandeHouse</title>
-    
-<!-- importación de bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/style.css" type="text/css">
-</head>
-<body style="background-color: #011d97;">
 
-<!-- Forms -->
-    <div class="container">
-        <div class="header">
-            <div class="logo"></div>
-            <h2 id="header-title">Iniciar Sesión</h2>
+    <!-- importación de bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" type="text/css" />
+  </head>
+  <body style="background-color: #011d97">
+    <!-- WRAP centrado -->
+    <div class="auth-wrap">
+      <!-- CARD -->
+      <div class="auth-card">
+        <!-- Header -->
+        <div
+          class="auth-header d-flex align-items-center justify-content-between"
+        >
+          <div class="d-flex align-items-center gap-3">
+            <div
+              class="rounded-circle bg-white border"
+              style="width: 48px; height: 48px"
+            ></div>
+            <h2 class="mb-0">Iniciar Sesión</h2>
+          </div>
+          <!-- Tabs -->
+          <div class="auth-tabs d-flex">
+            <button
+              class="btn btn-outline-primary active"
+              id="tabLogin"
+              type="button"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              id="tabRegister"
+              type="button"
+            >
+              Registro
+            </button>
+          </div>
         </div>
-        
-        <div class="form-container">
-            <!-- Formulario de Login -->
-            <form id="loginForm" class="form active">
+
+        <!-- Body -->
+        <div class="auth-body">
+          <div class="row g-4">
+            <div class="col-12 col-lg-10 mx-auto">
+              <!-- Login -->
+              <form
+                id="loginForm"
+                class="form-section active needs-validation"
+                novalidate
+              >
                 <div id="loginAlert"></div>
-                
-                <div class="form-group">
-                    <label for="loginEmail">CORREO</label>
-                    <input type="email" id="loginEmail" name="email" maxlength="100" required>
-                    <span class="error" id="loginEmailError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="loginEmail"
+                    name="email"
+                    maxlength="100"
+                    required
+                  />
+                  <label for="loginEmail">Correo</label>
+                  <div class="invalid-feedback">Ingresa un correo válido.</div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="loginPassword">CONTRASEÑA</label>
-                    <input type="password" id="loginPassword" name="password" minlength="4" maxlength="10" required>
-                    <span class="error" id="loginPasswordError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="loginPassword"
+                    name="password"
+                    minlength="4"
+                    maxlength="10"
+                    required
+                  />
+                  <label for="loginPassword">Contraseña</label>
+                  <div class="invalid-feedback">
+                    La contraseña es obligatoria (4–10).
+                  </div>
                 </div>
-                
-                <button type="submit" class="btn">Iniciar Sesión</button>
-                
-                <div class="switch-form">
-                    <p>¿No tienes cuenta? <button type="button" class="switch-btn" onclick="showRegister()">Regístrate aquí</button></p>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                  Iniciar sesión
+                </button>
+
+                <div class="switch-form text-center mt-3">
+                  <small
+                    >¿No tienes cuenta?
+                    <a href="#" id="goRegister">Regístrate aquí</a></small
+                  >
                 </div>
-            </form>
-            
-            <!-- Formulario de Registro -->
-            <form id="registerForm" class="form">
+              </form>
+
+              <!-- Registro -->
+              <form
+                id="registerForm"
+                class="form-section needs-validation"
+                novalidate
+              >
                 <div id="registerAlert"></div>
-                
-                <div class="form-group">
-                    <label for="fullName">NOMBRE COMPLETO</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                    <span class="error" id="fullNameError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    name="fullName"
+                    required
+                  />
+                  <label for="fullName">Nombre completo</label>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="registerEmail">CORREO</label>
-                    <input type="email" id="registerEmail" name="email" maxlength="100" required>
-                    <span class="error" id="registerEmailError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="registerEmail"
+                    name="email"
+                    maxlength="100"
+                    required
+                  />
+                  <label for="registerEmail">Correo</label>
+                  <div class="invalid-feedback">Ingresa un correo válido.</div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="registerPassword">CONTRASEÑA</label>
-                    <input type="password" id="registerPassword" name="password" minlength="4" maxlength="10" required>
-                    <span class="error" id="registerPasswordError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="registerPassword"
+                    name="password"
+                    minlength="4"
+                    maxlength="10"
+                    required
+                  />
+                  <label for="registerPassword">Contraseña</label>
+                  <div class="invalid-feedback">De 4 a 10 caracteres.</div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="confirmPassword">CONFIRMAR CONTRASEÑA</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    <span class="error" id="confirmPasswordError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    required
+                  />
+                  <label for="confirmPassword">Confirmar contraseña</label>
+                  <div class="invalid-feedback">
+                    Debes confirmar la contraseña.
+                  </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="phone">TELÉFONO (Opcional)</label>
-                    <input type="tel" id="phone" name="phone">
-                    <span class="error" id="phoneError"></span>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                  />
+                  <label for="phone">Teléfono (opcional)</label>
                 </div>
-                
-                <div class="select-group">
-                    <div class="form-group">
-                        <label for="region">REGIÓN</label>
-                        <select id="region" name="region" required>
-                            <option value="">-- Selecciona la región --</option>
-                        </select>
-                        <span class="error" id="regionError"></span>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select
+                        id="region"
+                        name="region"
+                        class="form-select"
+                        required
+                      >
+                        <option value="">-- Selecciona la región --</option>
+                      </select>
+                      <label for="region">Región</label>
+                      <div class="invalid-feedback">Selecciona una región.</div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="comuna">COMUNA</label>
-                        <select id="comuna" name="comuna" required>
-                            <option value="">-- Selecciona la comuna --</option>
-                        </select>
-                        <span class="error" id="comunaError"></span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select
+                        id="comuna"
+                        name="comuna"
+                        class="form-select"
+                        required
+                      >
+                        <option value="">-- Selecciona la comuna --</option>
+                      </select>
+                      <label for="comuna">Comuna</label>
+                      <div class="invalid-feedback">Selecciona una comuna.</div>
                     </div>
+                  </div>
                 </div>
-                
-                <button type="submit" class="btn">Registrar</button>
-                
-                <div class="switch-form">
-                    <p>¿Ya tienes cuenta? <button type="button" class="switch-btn" onclick="showLogin()">Inicia sesión aquí</button></p>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                  Registrarme
+                </button>
+
+                <div class="switch-form text-center mt-3">
+                  <small
+                    >¿Ya tienes cuenta?
+                    <a href="#" id="goLogin">Inicia sesión aquí</a></small
+                  >
                 </div>
-            </form>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- /auth-card -->
     </div>
-
-    <script src="validacion.js"></script>
-
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/validacion.js"></script>
+  </body>
 </html>

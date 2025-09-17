@@ -7,34 +7,56 @@
 <!-- importación de bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="assets/style.css" type="text/css">
 </head>
-<body style="background-color: #011d97;">
+<body style="background-color: #5068d1;">
 
 
 
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">TandeHouse</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="index.html">⭐Productos⭐</a>
+
+        <div class="d-flex align-items-center ms-auto">
+          <!-- botón carro -->
+          <a
+            href="carrito.html"
+            class="btn btn-navbar-icon position-relative"
+            aria-label="Ver carrito"
+          >
+            <i class="bi bi-cart3"></i>
+            <span
+              id="badgeCarrito"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              style="display: none"
+              >0</span
+            >
+          </a>
+
+          <!-- botón menú-->
+          <button
+            class="navbar-toggler ms-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Menú -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-0 mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >Inicio</a
-              >
+              <a class="nav-link" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.html">Productos</a>
@@ -44,27 +66,18 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contacto</a>
-            </li>            
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">Sobre Nosotros</a>
-            </li>           
-          </form>
+            </li>
           </ul>
-          <a href="carrito.html" class="position-relative text-decoration-none me-2">
-            <span class="me-2">Carrito</span>
-            <span id="badgeCarrito"
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                  style="display:none;">0</span>
-          </a>
         </div>
       </div>
     </nav>
-    <h1 style="text-align: center; color: #ffffff; font-weight: bold;">Productos</h1>
-    <p style="text-align: center; color: #ffffff;">Para TCGeros de corazón!</p>
 
 <div class="container my-4 section-products">
-  <h1 class="mb-2 text-white text-center fw-bold">Productos</h1>
-  <p class="text-center text-white-50 mb-4">Para TCGeros de corazón!</p>
+  <h1 class="mb-2 text-black text-center fw-bold">Productos</h1>
+  <p class="text-center text-black-50 mb-4">¡Aquí encontrarás tus productos favoritos de TCG a los mejores precios!</p>
 
   <div id="gridProductos" class="row g-4">
     <div class="col-12 col-sm-6 col-lg-4">
