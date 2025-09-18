@@ -288,3 +288,9 @@ select.form-select,
 textarea.form-control {
   border-radius: 0.6rem;
 }
+
+
+html, body { height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 1 auto; }
+.navbar .navbar-toggler-icon { background-image: var(--bs-navbar-toggler-icon-bg); }
