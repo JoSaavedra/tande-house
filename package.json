@@ -1,0 +1,30 @@
+{
+  "name": "tandehouse-react",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "babel fuente --out-dir dist --extensions .jsx,.js --presets @babel/preset-react",
+    "watch": "babel fuente --out-dir dist --extensions .jsx,.js --presets @babel/preset-react --watch",
+    "test": "karma start --single-run"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "jasmine-core": "^5.2.0",
+    "karma": "^6.4.3",
+    "karma-babel-preprocessor": "^8.0.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "classic"
+        }
+      ]
+    ]
+  }
+}
