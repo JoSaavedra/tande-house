@@ -7,14 +7,28 @@ function Checkout() {
     comuna: "",
     telefono: "",
   });
+  const [loading, setLoading] = React.useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
     if (st.cart.length === 0) {
-      location.hash = "#/fallo";
+      location.hash = "#/error?code=carrito_vacio";
       return;
     }
-    window.Store.clearCart();
-    location.hash = "#/exito";
+    setLoading(true);
+    setTimeout(() => {
+      let code = null;
+      if ((f.email || "").toLowerCase().endsWith("@fail.com"))
+        code = "tarjeta_rechazada";
+      if ((f.nombre || "").toLowerCase().includes("timeout"))
+        code = "red_timeout";
+      if (code) {
+        setLoading(false);
+        location.hash = "#/error?code=" + code;
+        return;
+      }
+      window.Store.clearCart();
+      location.hash = "#/exito";
+    }, 800);
   };
   return (
     <div className="container py-4">
@@ -70,8 +84,8 @@ function Checkout() {
           <a className="btn btn-outline-secondary" href="#/carrito">
             Volver
           </a>
-          <button className="btn btn-primary" type="submit">
-            Pagar
+          <button className="btn btn-primary" type="submit" disabled={loading}>
+            {loading ? "Procesando..." : "Pagar"}
           </button>
         </div>
       </form>
