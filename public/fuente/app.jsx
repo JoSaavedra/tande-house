@@ -17,5 +17,5 @@ default:return React.createElement(Inicio);
 }};
 const [current,setCurrent]=React.useState(window.Router.current());
 React.useEffect(()=>{const onHash=()=>setCurrent(window.Router.current());window.addEventListener("hashchange",onHash);return()=>window.removeEventListener("hashchange",onHash)},[]);
-return React.createElement(React.Fragment,null,React.createElement(Navbar),route(current),React.createElement(Footer))
+return React.createElement(React.Fragment,null,React.createElement(Navbar),route(current),React.createElement(Footer),React.createElement(ModalProducto))
 }

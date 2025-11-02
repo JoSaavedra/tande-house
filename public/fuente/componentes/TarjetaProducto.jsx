@@ -8,7 +8,7 @@ return(
 <div className="mt-auto d-flex align-items-center justify-content-between">
 <strong>{window.Utils.CLP(product.precio)}</strong>
 <div className="d-flex gap-2">
-<a className="btn btn-outline-secondary btn-sm" href={"#/producto/"+product.id}>Detalle</a>
+<button className="btn btn-outline-secondary btn-sm" onClick={()=>window.UI&&window.UI.showProduct(product)}>Detalle</button>
 <button className="btn btn-primary btn-sm" onClick={()=>onAdd(product)}><i className="bi bi-cart-plus"></i> Agregar</button>
 </div>
 </div>
