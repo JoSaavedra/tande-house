@@ -26,12 +26,14 @@ return(
 <li className="nav-item">
 <a className="btn btn-primary" href="#/login"><i className="bi bi-person"></i> Login</a>
 </li>
+
 ):(
 <li className="nav-item dropdown">
 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Hola, {user.nombre}</a>
 <ul className="dropdown-menu dropdown-menu-end">
-<li><a className="dropdown-item" href="#/">Mi cuenta</a></li>
-<li><hr className="dropdown-divider"/></li>
+    <li><a className="dropdown-item" href="#/">Mi cuenta</a></li>
+    <li><a className="dropdown-item" href="#/admin">Admin productos</a></li>
+    <li><hr className="dropdown-divider"/></li>
 <li><button className="dropdown-item" onClick={()=>window.Auth.logout()}>Cerrar sesión</button></li>
 </ul>
 </li>

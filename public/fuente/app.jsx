@@ -31,6 +31,8 @@ function App() {
         return React.createElement(Login);
       case "/registro":
         return React.createElement(Registro);
+      case "/admin":
+        return React.createElement(AdminProductos);
       default:
         return React.createElement(Inicio);
     }
